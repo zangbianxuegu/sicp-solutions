@@ -8,10 +8,11 @@ function car(x) {
 function cdr(x) {
   return x[1]
 }
-// 構造有理數
+// 構造函數
 function makeRat(n, d) {
   return cons(n, d)
 }
+// 選擇函數
 function numer(x) {
   return car(x)
 }
