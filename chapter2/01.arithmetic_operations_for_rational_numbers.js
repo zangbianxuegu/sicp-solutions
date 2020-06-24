@@ -39,11 +39,11 @@ function printRat(x) {
   console.log(numer(x) + '/' + denom(x))
 }
 const oneHalf = makeRat(1, 2)
-printRat(oneHalf)
+printRat(oneHalf) // 1/2
 const oneThird = makeRat(1, 3)
-printRat(addRat(oneHalf, oneThird))
-printRat(mulRat(oneHalf, oneThird))
-printRat(addRat(oneThird, oneThird))
+printRat(addRat(oneHalf, oneThird)) // 5/6
+printRat(mulRat(oneHalf, oneThird)) // 1/6
+printRat(addRat(oneThird, oneThird)) // 2/3
 // 求最大公約數
 function gcd(a, b) {
   if (b === 0) {
