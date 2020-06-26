@@ -1,13 +1,5 @@
-// 用 JavaScript 數組實現的 cons car cdr
-function cons(n, d) {
-  return [n, d]
-}
-function car(x) {
-  return x[0]
-}
-function cdr(x) {
-  return x[1]
-}
+import { cons, car, cdr } from './utils.js'
+
 // 構造函數
 function makeRat(n, d) {
   return cons(n, d)

@@ -1,47 +1,19 @@
 // 2.2.2 層次性結構
 
-// 用 JavaScript 數組實現的 cons car cdr
-function cons(n, d) {
-  return [n, d]
-}
-function car(x) {
-  return x[0]
-}
-function cdr(x) {
-  return x[1]
-}
-
-// 實現 list
-function list() {
-  if (arguments.length) {
-    return cons(arguments[0], list(...[...arguments].slice(1)) ?? null)
-  }
-}
-const list1 = list(1, 2, 3, 4)
-console.log(list1)
-
-// length：遞歸
-function length(items) {
-  return !items ? 0 : length(cdr(items)) + 1
-}
-console.log(length(list1))
-const list2 = list()
-console.log(length(list2))
-
-// append
-function append(list1, list2) {
-  return !list1 ? list2 : cons(car(list1), append(cdr(list1), list2))
-}
-const list3 = list(5, 6, 7, 8)
-console.log(append(list1, list3))
+import {
+  square,
+  isCons,
+  cons,
+  car,
+  cdr,
+  list,
+  length,
+  append,
+} from './utils.js'
 
 // 樹葉的數目
 const x = cons(list(1, 2), list(3, 4))
-console.log(length(x))
-// 判斷是否為序對
-function isCons(x) {
-  return Array.isArray(x)
-}
+console.log(length(x)) // 3
 function countLeaves(x) {
   if (!x) {
     return 0
@@ -51,7 +23,7 @@ function countLeaves(x) {
     return countLeaves(car(x)) + countLeaves(cdr(x))
   }
 }
-console.log(countLeaves(x))
+console.log(countLeaves(x)) // 4
 
 // 練習 2.24
 const x1 = list(1, list(2, list(3, 4)))
@@ -60,7 +32,7 @@ console.log(x1) // [1, [[2, [[3, [4, null]], null]], null]]
 //   /    \
 //  /      \
 // /        \
-//   1      [[2, [[3, [4, null]], null]], null]
+// 1        [[2, [[3, [4, null]], null]], null]
 //           /    \
 //          /      \
 //         2       [[3, [4, null]], null]

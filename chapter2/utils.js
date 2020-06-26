@@ -57,6 +57,19 @@ function list() {
   }
 }
 
+// length：迭代
+function length(items) {
+  function lengthIter(a, count) {
+    return !a ? count : lengthIter(cdr(a), count + 1)
+  }
+  return lengthIter(items, 0)
+}
+
+// append
+function append(list1, list2) {
+  return !list1 ? list2 : cons(car(list1), append(cdr(list1), list2))
+}
+
 // map
 function map(proc, items) {
   return !items ? null : cons(proc(car(items)), map(proc, cdr(items)))
@@ -74,5 +87,7 @@ export {
   car,
   cdr,
   list,
+  length,
+  append,
   map,
 }

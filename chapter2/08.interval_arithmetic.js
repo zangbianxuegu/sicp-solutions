@@ -1,15 +1,6 @@
 // 2.1.4 擴展練習：區間算術
 
-// 用 JavaScript 數組實現的 cons car cdr
-function cons(n, d) {
-  return [n, d]
-}
-function car(x) {
-  return x[0]
-}
-function cdr(x) {
-  return x[1]
-}
+import { cons, car, cdr } from './utils.js'
 
 // make interval
 // 構造函數

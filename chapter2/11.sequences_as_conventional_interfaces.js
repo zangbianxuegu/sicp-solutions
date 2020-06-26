@@ -12,6 +12,8 @@ import {
   car,
   cdr,
   list,
+  length,
+  append,
   map,
 } from './utils.js'
 

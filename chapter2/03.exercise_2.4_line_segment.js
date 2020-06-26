@@ -1,14 +1,7 @@
 // 練習 2.2 平面线段中点
-// 用 JavaScript 數組實現的 cons car cdr
-function cons(n, d) {
-  return [n, d]
-}
-function car(x) {
-  return x[0]
-}
-function cdr(x) {
-  return x[1]
-}
+
+import { cons, car, cdr } from './utils.js'
+
 // constructor
 function makePoint(x, y) {
   return cons(x, y)

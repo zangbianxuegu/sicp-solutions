@@ -1,15 +1,6 @@
 // 2.2.1 序列的表示
 
-// 用 JavaScript 數組實現的 cons car cdr
-function cons(n, d) {
-  return [n, d]
-}
-function car(x) {
-  return x[0]
-}
-function cdr(x) {
-  return x[1]
-}
+import { cons, car, cdr } from './utils.js'
 
 // 實現 list
 function list() {
@@ -156,7 +147,7 @@ function squareList(list) {
 console.log(squareList(list1))
 
 // 練習 2.23
-function forEach1(proc, list) {
+function forEach(proc, list) {
   if (list) {
     proc(car(list))
     forEach1(proc, cdr(list))
