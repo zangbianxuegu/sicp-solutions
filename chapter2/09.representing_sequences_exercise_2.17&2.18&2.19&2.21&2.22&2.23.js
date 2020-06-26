@@ -12,7 +12,7 @@ function cdr(x) {
 // 實現 list
 function list() {
   if (arguments.length) {
-    return cons(arguments[0], list(...[...arguments].slice(1)))
+    return cons(arguments[0], list(...[...arguments].slice(1)) ?? null)
   }
 }
 const list1 = list(1, 2, 3, 4)
