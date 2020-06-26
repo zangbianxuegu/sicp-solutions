@@ -1,3 +1,5 @@
+// 2.2.2 層次性結構
+
 // 用 JavaScript 數組實現的 cons car cdr
 function cons(n, d) {
   return [n, d]

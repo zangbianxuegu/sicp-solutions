@@ -1,3 +1,5 @@
+// 2.2.1 序列的表示
+
 // 用 JavaScript 數組實現的 cons car cdr
 function cons(n, d) {
   return [n, d]

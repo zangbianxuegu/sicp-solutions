@@ -1,5 +1,4 @@
 // 2.1.4 擴展練習：區間算術
-// 練習 2.7 2.8 2.10 2.14
 
 // 用 JavaScript 數組實現的 cons car cdr
 function cons(n, d) {
