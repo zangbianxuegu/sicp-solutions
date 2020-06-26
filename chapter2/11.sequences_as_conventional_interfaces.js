@@ -115,13 +115,32 @@ console.log(productOfSquaresOfOddElements(list(1, 2, 3, 4, 5))) // 255
 function map(p, sequence) {
   return accumulate((x, y) => cons(p(x), y), null, sequence)
 }
-
 // 用 accumulate 實現 append
 function append(seq1, seq2) {
   return accumulate(cons, seq2, seq1)
 }
-
 // 用 accumulate 實現 length
 function length(sequence) {
   return accumulate((x, y) => y + 1, 0, sequence)
 }
+
+// 練習 2.34: 多項式求值
+// 1 + 3x + 5x^3 + x^5
+function hornerEval(x, coefficientSequence) {
+  return accumulate(
+    (thisCoeff, higherTerm) => thisCoeff + x * higherTerm,
+    0,
+    coefficientSequence
+  )
+}
+console.log(hornerEval(2, list(1, 3, 0, 5, 0, 1))) // 79
+
+// 練習 2.35: 用 accumulate 實現 countLeaves
+function countLeaves(t) {
+  return accumulate(
+    plus,
+    0,
+    map((subTree) => (isCons(subTree) ? countLeaves(subTree) : 1), t)
+  )
+}
+console.log(countLeaves(list(1, list(2, list(3, 4)), 5))) // 5
