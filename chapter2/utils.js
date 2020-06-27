@@ -24,6 +24,11 @@ function times(x, y) {
   return x * y
 }
 
+// 除
+function divide(x, y) {
+  return x / y
+}
+
 // 是否為奇數
 function isOdd(x) {
   return x % 2 === 1
@@ -80,6 +85,7 @@ export {
   square,
   plus,
   times,
+  divide,
   isOdd,
   isEven,
   isCons,
