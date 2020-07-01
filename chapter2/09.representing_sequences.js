@@ -150,6 +150,6 @@ console.log(squareList(list1))
 function forEach(proc, list) {
   if (list) {
     proc(car(list))
-    forEach1(proc, cdr(list))
+    forEach(proc, cdr(list))
   }
 }

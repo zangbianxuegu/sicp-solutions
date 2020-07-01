@@ -62,6 +62,11 @@ function list() {
   }
 }
 
+// 第 n 項
+function listRef(items, n) {
+  return n === 0 ? car(items) : listRef(cdr(items), n - 1)
+}
+
 // length：迭代
 function length(items) {
   function lengthIter(a, count) {
@@ -93,6 +98,7 @@ export {
   car,
   cdr,
   list,
+  listRef,
   length,
   append,
   map,
