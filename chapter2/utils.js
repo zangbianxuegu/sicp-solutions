@@ -60,6 +60,7 @@ function list() {
   if (arguments.length) {
     return cons(arguments[0], list(...[...arguments].slice(1)) ?? null)
   }
+  return null
 }
 
 // 第 n 項
