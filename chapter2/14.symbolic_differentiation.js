@@ -58,7 +58,7 @@ function augend(s) {
   return car(cdr(cdr(s)))
 }
 
-// isPr
+// isProduct
 function isProduct(x) {
   return isCons(x) && car(x) === '*'
 }
@@ -139,4 +139,53 @@ function deriv(exp, vari) {
   }
 }
 
+// 練習 2.57
+function augend(s) {
+  return accumulate(makeSum, 0, cdr(cdr(s)))
+}
+function multiplicand(s) {
+  return accumulate(makeProduct, 1, cdr(cdr(s)))
+}
 
+// 練習 2.58
+// makeSum
+function makeSum(a1, a2) {
+  if (a1 === 0) {
+    return a2
+  } else if (a2 === 0) {
+    return a1
+  } else if (isNumber(a1) && isNumber(a2)) {
+    return a1 + a2
+  }
+  return list(a1, '+', a2)
+}
+function makeProduct(m1, m2) {
+  if (m1 === 0 || m2 === 0) {
+    return 0
+  } else if (m1 === 1) {
+    return m2
+  } else if (m2 === 1) {
+    return m1
+  } else if (isNumber(m1) && isNumber(m2)) {
+    return m1 * m2
+  }
+  return list(m1, '*', m2)
+}
+function isSum(x) {
+  return isCons(x) && car(cdr(x)) === '+'
+}
+function addend(s) {
+  return car(s)
+}
+function augend(s) {
+  return car(cdr(cdr(s)))
+}
+function isProduct(x) {
+  return isCons(x) && car(cdr(x)) === '*'
+}
+function multiplier(p) {
+  return car(p)
+}
+function multiplicand(p) {
+  return car(cdr(cdr(p)))
+}
