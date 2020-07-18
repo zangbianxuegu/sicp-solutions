@@ -1,6 +1,6 @@
 // 3.1.2 引進賦值帶來的利益
 
-import { gcd } from '../utils.js'
+import { square, gcd } from '../utils.js'
 
 // x2 = randUpdate(x1)
 // x3 = randUpdate(x2)
@@ -74,3 +74,56 @@ function randomGcdTest(trials, initialX) {
 
 console.log(estimatePi(1000)) // 3.042903097250923
 console.log(estimatePi(10000)) // Uncaught RangeError: Maximum call stack size exceeded
+
+
+// 練習 3.5
+// 假設半徑為 3 的圓，以 (2, 4) 和 (8, 10) 為對角頂點，(5, 7) 為圓心
+
+// 求 π
+// 3 * 3 * π / (6 * 6) = 隨機點在圓內的概率
+function estimatePi(trials) {
+  return estimateIntegral(P, 2, 8, 4, 10, trials) * square(6) / square(3)
+}
+
+// 在圓內的概率
+function estimateIntegral(P, x1, x2, y1, y2, trials) {
+  return monteCarlo(trials, function() {
+    return P(randomInRange(x1, x2), randomInRange(y1, y2))
+  })
+}
+
+// 是否在圓內
+function P(x, y) {
+  return square(x - 5) + square(y - 7) <= square(3)
+}
+
+// 給定區間的隨機數
+function randomInRange(low, high) {
+  const range = high - low
+  return low + Math.floor((Math.random() * range))
+}
+
+console.log(estimatePi(10000))
+
+
+// 練習 3.6
+function makeRand() {
+  let state = randomInit
+  return (symbol) => {
+    if (symbol === 'reset') {
+      return (newState) => {
+        state = newState
+      }
+    } else {
+      state = randUpdate(state)
+      return state
+    }
+  }
+}
+
+const rand = makeRand()
+console.log(rand('generate'))
+console.log(rand('generate'))
+console.log(rand('reset')(12345))
+console.log(rand('generate'))
+
