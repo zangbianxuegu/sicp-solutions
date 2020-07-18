@@ -1,6 +1,6 @@
 // 2.4.3 數據導向的程序設計和可加性
 
-import { square, car, cdr, cons, isCons, map } from './utils.js'
+import { square, car, cdr, cons, isCons, map } from '../utils.js'
 
 // 直角坐標表示
 function installRectangularPackage() {

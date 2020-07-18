@@ -9,6 +9,11 @@ function fib(n) {
   return fibIter(1, 0, n)
 }
 
+// 求最大公約數
+function gcd(a, b) {
+  return b === 0 ? a : gcd(b, a % b)
+}
+
 // 求平方
 function square(x) {
   return x * x
@@ -88,6 +93,7 @@ function map(proc, items) {
 
 export {
   fib,
+  gcd,
   square,
   plus,
   times,

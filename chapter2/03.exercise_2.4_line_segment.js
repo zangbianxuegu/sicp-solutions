@@ -1,6 +1,6 @@
 // 練習 2.2 平面线段中点
 
-import { cons, car, cdr } from './utils.js'
+import { cons, car, cdr } from '../utils.js'
 
 // constructor
 function makePoint(x, y) {

@@ -16,7 +16,7 @@ import {
   length,
   append,
   map,
-} from './utils.js'
+} from '../utils.js'
 
 // sum odd squares
 function sumOddSquares(tree) {

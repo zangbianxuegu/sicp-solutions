@@ -1,6 +1,6 @@
 // 2.3.4 實例: Huffman 編碼樹
 
-import { car, cdr, list, append, cons } from './utils.js'
+import { car, cdr, list, append, cons } from '../utils.js'
 
 function makeLeaf(symbol, weight) {
   return list('leaf', symbol, weight)

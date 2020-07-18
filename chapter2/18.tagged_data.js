@@ -1,6 +1,6 @@
 // 2.4.1 帶標誌數據
 
-import { square, car, cdr, cons, isCons } from './utils.js'
+import { square, car, cdr, cons, isCons } from '../utils.js'
 
 function attachTag(typeTag, contents) {
   return cons(typeTag, contents)

@@ -1,6 +1,6 @@
 // 2.4.1 複數的表示
 
-import { square, car, cdr, cons } from './utils.js'
+import { square, car, cdr, cons } from '../utils.js'
 
 function addComplex(z1, z2) {
   return makeFromRealImag(

@@ -1,6 +1,6 @@
 // 2.1.4 擴展練習：區間算術
 
-import { cons, car, cdr } from './utils.js'
+import { cons, car, cdr } from '../utils.js'
 
 // make interval
 // 構造函數

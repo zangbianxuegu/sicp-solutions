@@ -9,7 +9,7 @@ import {
   list,
   length,
   append,
-} from './utils.js'
+} from '../utils.js'
 
 // 樹葉的數目
 const x = cons(list(1, 2), list(3, 4))

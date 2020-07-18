@@ -1,4 +1,4 @@
-import { cons, car, cdr } from './utils.js'
+import { cons, car, cdr } from '../utils.js'
 
 // 構造函數
 function makeRat(n, d) {

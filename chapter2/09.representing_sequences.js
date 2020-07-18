@@ -1,6 +1,6 @@
 // 2.2.1 序列的表示
 
-import { cons, car, cdr } from './utils.js'
+import { cons, car, cdr } from '../utils.js'
 
 // 實現 list
 function list() {
