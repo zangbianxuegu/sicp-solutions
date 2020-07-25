@@ -91,6 +91,11 @@ function map(proc, items) {
   return !items ? null : cons(proc(car(items)), map(proc, cdr(items)))
 }
 
+// 是否在 list 中
+function memq(item, x) {
+  return x === null ? false : item === car(x) ? x : memq(item, cdr(x))
+}
+
 export {
   fib,
   gcd,
@@ -109,4 +114,5 @@ export {
   length,
   append,
   map,
+  memq,
 }

@@ -1,6 +1,6 @@
 // 3.1.3 引進賦值的代價
 
-const { cons } = require("../utils")
+import { cons } from '../utils.js'
 
 function makeSimplifiedWithdraw(balance) {
   return function(amount) {
